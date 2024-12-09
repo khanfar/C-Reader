@@ -1,0 +1,123 @@
+# Default PINs for SLE4442 cards (one PIN per line, in hex format)
+# Each PIN must be exactly 3 bytes (6 hex characters)
+FFFFFF
+FFFF00
+000000
+111111
+222222
+333333
+444444
+555555
+666666
+777777
+888888
+999999
+AAAAAA
+BBBBBB
+CCCCCC
+DDDDDD
+EEEEEE
+123456
+ABCDEF
+FEDCBA
+
+# === VERIFIED PINS ===
+444444  # Verified on 2024-12-09 19:49:13
+FFFFFF  # Verified on 2024-12-09 19:51:39
+
+# Default PINs for Memory Cards
+# Format: PIN (HEX) - Description
+
+# === CARD SPECIFIC PINS ===
+# For card with UID: A2 13 10 91
+A21310 - Based on first 3 bytes of UID
+109100 - Based on last 3 bytes of UID
+A21391 - First 2 and last 2 bytes
+A213FF - First 3 bytes + FF
+FF1391 - FF + last 3 bytes
+A2FF91 - First byte + FF + last byte
+FFA213 - FF + first 3 bytes
+91FF91 - Last byte repeated with FF
+A2FFA2 - First byte repeated with FF
+131313 - Middle bytes repeated
+101010 - Pattern from middle bytes
+919191 - Last byte repeated
+A2A2A2 - First byte repeated
+
+# SLE4442 Default PINs
+FFFFFF - Standard factory default
+FFFF00 - Alternative factory setting
+FF0000 - Common variation
+000000 - After reset
+AAAAAA - Alternative common
+555555 - Alternative common
+123456 - Common custom setting
+ABCDEF - Common custom setting
+112233 - Simple sequence
+445566 - Simple sequence
+777777 - Repeated digit
+888888 - Repeated digit
+999999 - Repeated digit
+AAA000 - Pattern based
+BBB111 - Pattern based
+CCC222 - Pattern based
+121212 - Pattern based
+CCCCCC - Repeated letter
+DDDDDD - Repeated letter
+EEEEEE - Repeated letter
+147258 - Keypad pattern
+258369 - Keypad pattern
+963852 - Keypad pattern
+159753 - Keypad pattern
+753951 - Keypad pattern
+FEDCBA - Reverse sequence
+A5A5A5 - Alternating pattern
+5A5A5A - Alternating pattern
+F0F0F0 - Alternating pattern
+0F0F0F - Alternating pattern
+111111 - Repeated digit
+222222 - Repeated digit
+333333 - Repeated digit
+444444 - Repeated digit
+666666 - Repeated digit
+
+# SLE4428 Default PINs
+FFFF - Standard factory default (4 bytes)
+0000 - After reset (4 bytes)
+AAAA - Alternative common (4 bytes)
+5555 - Alternative common (4 bytes)
+1234 - Simple sequence (4 bytes)
+4321 - Reverse sequence (4 bytes)
+9999 - Repeated digit (4 bytes)
+8888 - Repeated digit (4 bytes)
+7777 - Repeated digit (4 bytes)
+6666 - Repeated digit (4 bytes)
+
+# SLE5542 Default PINs
+FFFFFFFF - Standard factory default (8 bytes)
+00000000 - After reset (8 bytes)
+AAAAAAAA - Alternative common (8 bytes)
+55555555 - Alternative common (8 bytes)
+12345678 - Simple sequence (8 bytes)
+87654321 - Reverse sequence (8 bytes)
+11111111 - Repeated digit (8 bytes)
+22222222 - Repeated digit (8 bytes)
+33333333 - Repeated digit (8 bytes)
+44444444 - Repeated digit (8 bytes)
+
+# AT24C Default PINs
+FFFF - Factory default
+0000 - Common setting
+AAAA - Alternative common
+5555 - Alternative common
+
+# Common Variations
+# Add FF or 00 suffix/prefix to any of the above
+# Example: FFFFFF00, 00FFFFFF, etc.
+
+# Notes:
+# - All PINs are in hexadecimal format
+# - Some cards may have custom PINs set by manufacturers
+# - Always try factory defaults first
+# - Some cards may lock after wrong PIN attempts
+# - Keep track of successful PINs for each card type
