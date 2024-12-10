@@ -401,3 +401,113 @@ To maintain code quality and ensure smooth collaboration, consider the following
 - Follow consistent coding standards across the codebase.
 - Document your code thoroughly, explaining the purpose of complex functions.
 - Use version control effectively, including meaningful commit messages and branching strategies.
+
+## AT24C64 EEPROM Reader/Writer and Smart Card Reader
+
+## Project Overview
+This project includes two applications developed by Khanfar Systems: the **AT24C64 EEPROM Reader/Writer** and the **Smart Card Reader**.
+
+## Features
+- **Read/Write Operations**: Efficiently read from and write to the AT24C64 EEPROM.
+- **Card Cloning**: Clone data from one card to another.
+- **Data Comparison**: Compare memory dumps for verification.
+- **User-Friendly GUI**: Intuitive graphical interface for ease of use.
+
+## Application Structure Overview
+- **at24c64_app.py**: Contains the main functionality for the AT24C64 EEPROM Reader/Writer.
+- **smart_card_app.py**: Manages interactions with the smart card reader.
+- **requirements.txt**: Lists all dependencies required for the applications.
+
+## Functionality Descriptions
+### Connecting to the Card
+- Use the **Connect** button to establish a connection to the card reader. The application will indicate whether the connection is successful.
+
+### Reading Data
+- **Read Sector**: Use the `read_sector()` function to read data from a specified sector.
+- **Read All**: The `read_all_data()` function allows you to read all sectors and save the data to a file.
+
+### Writing Data
+- **Write Sector**: The `write_sector()` function enables writing data to a specific sector. Ensure the data format is correct (16 bytes in hex).
+- **Write Binary File**: Use `write_binary_file()` to write a binary file to the EEPROM, specifying the start page and ensuring the file size does not exceed the card's capacity.
+
+### Card Cloning
+- The application supports card cloning through the `clone_card()` method, allowing users to select dump files for cloning operations.
+
+## Data Protection and Security
+- The `check_protection()` function checks if a sector is write-protected. If a sector is protected, users must verify their PIN before writing data.
+
+## Error Handling
+- The applications handle various errors, such as connection issues and read/write failures. Users are encouraged to monitor console logs for troubleshooting.
+
+## Logging and Console Output
+- The applications utilize logging to provide feedback on operations. Console output displays messages regarding the status of connections, read/write operations, and errors.
+
+## Dependencies
+To run the applications, ensure the following libraries are installed:
+- `pyscard==2.0.7`
+
+You can install the required dependencies using:
+```
+pip install -r requirements.txt
+```
+
+## Usage Examples
+- **Reading a Sector**: Enter the sector number and click **Read Block**.
+- **Writing Data**: Enter the sector number and data in hex format, then click **Write Page**.
+- **Cloning a Card**: Select a dump file and click **Clone Card**.
+
+## Visual Aids
+Consider adding flowcharts or diagrams to illustrate the application flow, especially for complex operations like reading/writing data and card cloning.
+
+## Future Enhancements
+- Additional features such as enhanced error handling, support for more card types, and improved user interface elements are planned for future versions.
+
+## Contribution Guidelines
+If you're interested in contributing to this project, please follow these guidelines:
+- Ensure your code adheres to the project's coding standards.
+- Submit pull requests with a clear description of the changes.
+- Test your changes thoroughly before submitting.
+
+## Contact Information
+For questions or support, please reach out to [Your Contact Information].
+
+## References and Further Reading
+- [AT24C64 Datasheet](https://www.example.com)
+- [Smart Card Technology Overview](https://www.example.com)
+
+---
+
+## AT24C64 Pinout Diagram
+```
+          ______________________
+         |                      |
+         |      AT24C64        |
+         |                      |
+         |   +--------------+   |
+         |   |              |   |
+         |   |   Chip      |   |
+         |   |              |   |
+         |   +--------------+   |
+         |                      |
+         |   Pin 1 (VCC)      |  <--- Connect to C1 (VCC)
+         |   Pin 2 (SDA)      |  <--- Connect to C7 (SDA)
+         |   Pin 3 (SCL)      |  <--- Connect to C3 (CLK)
+         |   Pin 4 (GND)      |  <--- Connect to C5 (GND)
+         |   Pin 5 (WP)       |  <--- Connect to C8 (WP)
+         |______________________|
+```
+
+## ACR38U-R4 Pinout Diagram
+```
+   +--------------------+
+   |    ACR38U-R4      |
+   |                    |
+   |   C1 (VCC)        |  <--- Connect to Pin 1 (VCC)
+   |   C2 (RST)        |  <--- Not Connected
+   |   C3 (CLK)        |  <--- Connect to Pin 3 (SCL)
+   |   C4 (NA)         |  <--- Not Used
+   |   C5 (GND)        |  <--- Connect to Pin 4 (GND)
+   |   C6 (NC)         |  <--- Not Used
+   |   C7 (SDA)        |  <--- Connect to Pin 2 (SDA)
+   |   C8 (WP)         |  <--- Connect to Pin 5 (WP)
+   +--------------------+
